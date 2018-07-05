@@ -1,5 +1,10 @@
 #include "PushButton.h"
 
+#include <stdio.h>
+#include <string.h>
+#include <inttypes.h>
+#include "Arduino.h"
+
 PushButton::PushButton(byte pinBotao, int tempoDebounce) {
   pinMode(pinBotao, INPUT_PULLUP);
   pino = pinBotao;

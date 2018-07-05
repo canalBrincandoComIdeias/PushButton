@@ -1,6 +1,8 @@
 #ifndef PushButton_h
 #define PushButton_h
 
+#include "Arduino.h"
+
 class PushButton {
   public:
     PushButton(byte pinBotao, int tempoDebounce = 200);
