@@ -1,0 +1,21 @@
+#######################################
+# Syntax Coloring Map For PushButton
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1) - Tipos de Dados
+#######################################
+
+PushButton	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2) - Métodos e Funções
+#######################################
+
+button_loop	KEYWORD2
+pressed	KEYWORD2
+
+#######################################
+# Constants (LITERAL1) - Constantes
+#######################################
+
