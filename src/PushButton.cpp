@@ -20,6 +20,10 @@ void PushButton::button_loop() {
          debounceBotao = millis();
      }
   }  
+  
+  if (estadoBotao && !estadoBotaoAnt) {
+         debounceBotao = millis();
+  }
   estadoBotaoAnt = estadoBotao;
 }
 
