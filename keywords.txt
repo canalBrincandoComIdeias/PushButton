@@ -14,6 +14,8 @@ PushButton	KEYWORD1
 
 button_loop	KEYWORD2
 pressed	KEYWORD2
+released	KEYWORD2
+button	KEYWORD2
 
 #######################################
 # Constants (LITERAL1) - Constantes

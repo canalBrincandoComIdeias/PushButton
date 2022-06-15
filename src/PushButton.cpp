@@ -12,21 +12,40 @@ PushButton::PushButton(byte pinBotao, int tempoDebounce) {
 }
 
 void PushButton::button_loop() {
-  bool estadoBotao = digitalRead(pino);
   apertado = false;
-  if (  (millis() - debounceBotao) > tempo ) {
-     if (!estadoBotao && estadoBotaoAnt) {
-         apertado = true;
-         debounceBotao = millis();
-     }
-  }  
+  solto = false;
   
-  if (estadoBotao && !estadoBotaoAnt) {
-         debounceBotao = millis();
+  if ( (millis() - debounceBotao) >= tempo ) {
+    estadoBotao = digitalRead(pino);
+    
+	if (!estadoBotao && estadoBotaoAnt) {
+      debounceBotao = millis();
+	  tempoInicio = debounceBotao;
+	  apertado = true;
+    }
+
+    if (estadoBotao && !estadoBotaoAnt) {
+      debounceBotao = millis();
+	  tempoInicio = 0;
+	  solto = true;
+    }
+	
+	estadoBotaoAnt = estadoBotao;
   }
-  estadoBotaoAnt = estadoBotao;
+
 }
 
 bool PushButton::pressed() {
   return apertado;
+}
+
+bool PushButton::released() {
+  return solto;
+}
+
+int PushButton::button() {
+  if (estadoBotao == APERTADO){
+	  return (millis() - tempoInicio);
+  }
+  return 0;
 }
